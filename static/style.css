@@ -1,0 +1,75 @@
+/* CSS RESET */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* create variables for colors */
+:root {
+    --color-one: green;
+    --color-two: red;
+}
+
+/* h1 stylinging */
+h1 {
+    color: var(--color-one);
+    background-color: var(--color-two);
+    text-align: center;
+    /* display: inline-block; */
+    width: max-content;
+    padding: 0.5rem;
+    margin: 20px auto;
+
+}
+
+
+/* styleing for board class */
+.board {
+    margin: 0 auto;
+    width: min-content;
+    /* outline: 1px solid blue; */
+}
+
+/* styling for rows */
+.row {
+    display: flex;
+}
+
+/* styling for squares */
+.square {
+    box-sizing: border-box;
+    width: 50px;
+    aspect-ratio: 1;
+    /* border: 1px solid black; */
+}
+
+/* .square:nth-of-type(2n+1) {
+    background-color: var(--color-one);
+    
+}
+
+.square:nth-of-type(2n) {
+    background-color: var(--color-two);
+    
+} */
+
+
+/* ---- logic to make colors appear in correct order ---- */
+
+/* odd rows */
+.row:nth-of-type(2n+1) .square:nth-of-type(2n+1) {
+    background-color: var(--color-one);
+}
+
+.row:nth-of-type(2n+1) .square:nth-of-type(2n) {
+    background-color: var(--color-two);
+}
+
+/* even rows */
+.row:nth-of-type(2n) .square:nth-of-type(2n+1) {
+    background-color: var(--color-two);
+}
+
+.row:nth-of-type(2n) .square:nth-of-type(2n) {
+    background-color: var(--color-one);
+}
